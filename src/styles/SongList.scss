@@ -1,0 +1,121 @@
+.song-list {
+  padding: 1rem;
+
+  .search-wrapper {
+    position: relative;
+
+    .search-icon {
+      position: absolute;
+      right: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: rgba(255, 255, 255, 0.6);
+      pointer-events: none;
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 10px 36px 10px 12px;
+      background-color: rgba(255, 255, 255, 0.05);
+      border: none;
+      color: #fff;
+
+      &::placeholder {
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      &:focus {
+        box-shadow: none;
+        outline: none;
+      }
+    }
+  }
+
+  .song-item {
+    background: transparent;
+    border: none;
+    color: #fff;
+    transition: background-color 0.3s ease;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 5px;
+    }
+
+    &.active {
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 5px;
+    }
+
+    .thumbnail {
+      width: 30px;
+      height: 30px;
+      border-radius: 100%;
+    }
+
+    .song-title {
+      font-weight: 500;
+    }
+
+    .song-artist {
+      font-size: 0.875rem;
+      color: rgba(192, 192, 192, 0.7);
+    }
+
+    .song-duration {
+      font-size: 0.875rem;
+      color: rgba(192, 192, 192, 0.7);
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 0.75rem;
+
+    .search-wrapper {
+      margin-bottom: 1rem;
+
+      .search-input {
+        padding: 8px 36px 8px 12px;
+        font-size: 0.95rem;
+      }
+    }
+
+    .song-item {
+      flex-direction: column;
+      align-items: flex-start !important;
+      gap: 8px;
+
+      .thumbnail {
+        width: 40px;
+        height: 40px;
+      }
+
+      .song-duration {
+        align-self: flex-end;
+        font-size: 0.8rem;
+      }
+    }
+  }
+
+  @media (max-width: 480px) {
+    .search-input {
+      font-size: 0.85rem;
+    }
+
+    .song-item {
+      .song-title {
+        font-size: 0.9rem;
+      }
+
+      .song-artist {
+        font-size: 0.75rem;
+      }
+
+      .song-duration {
+        font-size: 0.75rem;
+      }
+    }
+  }
+}

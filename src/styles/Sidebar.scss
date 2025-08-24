@@ -1,0 +1,82 @@
+.sidebar {
+  color: white;
+  height: 100vh;
+  width: 240px;
+  padding: 1rem;
+  transition: left 0.3s ease;
+  position: relative;
+  z-index: 1050;
+
+  @media (max-width: 768px) {
+    padding-top: 100px !important;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+  }
+
+  .nav-link {
+    color: #aaa;
+    margin: 0.25rem 0;
+    font-weight: 500;
+
+    &.active,
+    &:hover {
+      color: white;
+    }
+  }
+
+  .profile-icon {
+    img {
+      border: 2px solid #333;
+      height: 40px;
+      width: 40px;
+      object-fit: cover;
+      cursor: pointer;
+    }
+  }
+
+  @media (max-width: 768px) {
+    position: fixed;
+    top: 0;
+    left: -240px;
+    height: 100vh;
+    z-index: 1050;
+    transition: left 0.3s ease;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.7);
+
+    &.open {
+      left: 0;
+    }
+  }
+}
+
+.hamburger {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1100;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  cursor: pointer;
+  display: none;
+  transition: background 0.3s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
+
+  svg {
+    color: #fff;
+    width: 24px;
+    height: 24px;
+  }
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+}
